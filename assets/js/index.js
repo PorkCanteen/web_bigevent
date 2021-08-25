@@ -35,18 +35,7 @@ function getUserInfo() {
             // 调用renderAvatar渲染用户的头像
             renderAvatar(res.data);
         },
-        // 无论成功失败都会调用complete函数
-        complete: function (res) {
-            // console.log('执行了complete');
-            // console.log(res);
-            // 在complete回调函数中，可以使用res.responseJSON拿到服务器响应回来的数据
-            if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
-                // 1. 强制清空token
-                localStorage.removeItem('token');
-                location.href = '/大事件项目/Code/login.html';
-                // 2. 强制跳转到登录页
-            }
-        }
+
     })
 }
 // 渲染用户头像★★★
